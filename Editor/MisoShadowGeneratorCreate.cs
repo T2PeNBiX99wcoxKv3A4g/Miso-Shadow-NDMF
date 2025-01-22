@@ -1,0 +1,43 @@
+using __yky.MisoShadowController.Runtime;
+using UnityEditor;
+using UnityEngine;
+using VRC.SDK3.Avatars.Components;
+
+namespace __yky.MisoShadowController.Editor
+{
+    public class MisoShadowGeneratorCreate : EditorWindow
+    {
+        private const string MenuPath = "GameObject/Miso Shadow/Add Shadow (NDMF)";
+        private const string ObjName = "MisoShadow";
+
+        [MenuItem(MenuPath, false, 9)]
+        private static void CreateGenerator(MenuCommand menuCommand)
+        {
+            var avatar = menuCommand.context as GameObject;
+
+            if (avatar == null)
+            {
+                EditorUtility.DisplayDialog("Warning", "No objects getting selected!", "Use Correct Avatar Object");
+                return;
+            }
+
+            var desc = avatar.GetComponent<VRCAvatarDescriptor>();
+
+            if (desc == null)
+            {
+                EditorUtility.DisplayDialog("Warning", "There is no VRCAvatarDescriptor Component",
+                    "Use Correct Avatar Object");
+                return;
+            }
+
+            var newObj = new GameObject(ObjName)
+            {
+                transform = { parent = avatar.transform }
+            };
+
+            newObj.AddComponent<MisoShadowGenerate>();
+
+            EditorUtility.DisplayDialog("Success", "Miso Shadow Apply Complete", "OK");
+        }
+    }
+}
