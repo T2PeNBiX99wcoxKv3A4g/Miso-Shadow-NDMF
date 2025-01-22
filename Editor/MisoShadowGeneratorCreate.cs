@@ -8,6 +8,7 @@ namespace __yky.MisoShadowController.Editor
     public class MisoShadowGeneratorCreate : EditorWindow
     {
         private const string MenuPath = "GameObject/Miso Shadow/Add Shadow (NDMF)";
+        private const string MenuPath2 = "GameObject/Miso Shadow/Add Ignore (NDMF)";
         private const string ObjName = "MisoShadow";
 
         [MenuItem(MenuPath, false, 9)]
@@ -38,6 +39,20 @@ namespace __yky.MisoShadowController.Editor
             newObj.AddComponent<MisoShadowGenerate>();
 
             EditorUtility.DisplayDialog("Success", "Miso Shadow Apply Complete", "OK");
+        }
+
+        [MenuItem(MenuPath2, false, 12)]
+        private static void CreateIgnore(MenuCommand menuCommand)
+        {
+            var obj = menuCommand.context as GameObject;
+            
+            if (obj == null)
+            {
+                EditorUtility.DisplayDialog("Warning", "No objects getting selected!", "Use Correct Object");
+                return;
+            }
+            
+            obj.AddComponent<MisoShadowIgnore>();
         }
     }
 }
