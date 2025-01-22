@@ -86,5 +86,50 @@ namespace __yky.MisoShadowController.Editor
                 ApplyToAllChildren(child, nameList, avatar, binding, curve, destClip, excludeFilter, ignoreFilter);
             }
         }
+
+
+        private static readonly GUIContent LabelContent = new();
+
+        public static GUIContent Label(string text, string textTip = null)
+        {
+            var label = LabelContent;
+            label.text = text;
+            label.tooltip = textTip;
+
+            return label;
+        }
+
+        private static GUIStyle boldLabel;
+
+        // ReSharper disable once MemberCanBePrivate.Global
+        public static GUIStyle BoldLabel
+        {
+            get
+            {
+                boldLabel ??= new GUIStyle(EditorStyles.label) { fontStyle = FontStyle.Bold, fontSize = 15 };
+                return boldLabel;
+            }
+        }
+        
+        private static GUIStyle boldLabel2;
+
+        // ReSharper disable once MemberCanBePrivate.Global
+        public static GUIStyle BoldLabel2
+        {
+            get
+            {
+                boldLabel2 ??= new GUIStyle(EditorStyles.label) { fontStyle = FontStyle.Bold, fontSize = 12 };
+                return boldLabel2;
+            }
+        }
+
+        private const string Title = "Miso Shadow NDMF";
+        private static GUIContent titleCache;
+
+        public static void ShowTitle()
+        {
+            titleCache ??= new GUIContent($"{Title}");
+            EditorGUILayout.LabelField(titleCache, BoldLabel);
+        }
     }
 }
