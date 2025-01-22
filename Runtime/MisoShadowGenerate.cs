@@ -1,4 +1,3 @@
-using __yky.Scripts.Runtime;
 using nadena.dev.modular_avatar.core;
 using UnityEngine;
 using VRC.SDK3.Avatars.ScriptableObjects;
@@ -9,7 +8,7 @@ namespace __yky.MisoShadowController.Runtime
     [RequireComponent(typeof(ModularAvatarMenuInstaller))]
     [RequireComponent(typeof(ModularAvatarMenuGroup))]
     [AddComponentMenu("yky/Miso Shadow/Miso Shadow Generate")]
-    public class MisoShadowGenerate : YkyEditorComponent
+    public class MisoShadowGenerate : MisoShadowEditorComponent
     {
         public ModularAvatarMenuItem menuRoot;
         public bool enableByDefault;

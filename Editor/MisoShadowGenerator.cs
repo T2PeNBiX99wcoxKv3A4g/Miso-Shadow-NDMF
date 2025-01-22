@@ -6,12 +6,9 @@ using AnimatorAsCode.V1.ModularAvatar;
 using AnimatorAsCode.V1.VRC;
 using nadena.dev.ndmf;
 using Miso.Utility;
-using nadena.dev.modular_avatar.core;
-using nadena.dev.modular_avatar.core.menu;
 using UnityEditor;
 using UnityEngine;
 using VRC.SDK3.Avatars.Components;
-using VRC.SDK3.Avatars.ScriptableObjects;
 
 [assembly: ExportsPlugin(typeof(MisoShadowGenerator))]
 
