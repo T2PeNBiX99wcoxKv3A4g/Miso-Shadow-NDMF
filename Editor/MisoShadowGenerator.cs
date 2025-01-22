@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using __yky.MisoShadowController.Editor;
 using __yky.MisoShadowController.Runtime;
 using AnimatorAsCode.V1;
@@ -38,6 +39,8 @@ namespace __yky.MisoShadowController.Editor
 
         protected override void Configure() => InPhase(BuildPhase.Generating).Run($"Generate {DisplayName}", Generate);
 
+        private static void Log(object message) => Debug.Log($"[{nameof(MisoShadowGenerator)}] {message}");
+
         private static void LogError(object message) => Debug.LogError($"[{nameof(MisoShadowGenerator)}] {message}");
 
         private void Generate(BuildContext ctx)
@@ -53,6 +56,16 @@ namespace __yky.MisoShadowController.Editor
             {
                 LogError("NameList is null or empty.");
                 return;
+            }
+
+            var ignoreList = Utils.CheckIgnore(avatar);
+
+            foreach (var ignore in from ignore in ignoreList
+                     let success = nameList.Remove(ignore)
+                     where success
+                     select ignore)
+            {
+                Log("Ignore transform: " + ignore);
             }
 
             // Initialize Animator As Code.
@@ -91,12 +104,6 @@ namespace __yky.MisoShadowController.Editor
                     if (objTransform == null)
                     {
                         LogError("Could not find transform: " + name);
-                        continue;
-                    }
-
-                    if (objTransform.TryGetComponent(out MisoShadowIgnore _))
-                    {
-                        LogError("Ignore transform: " + name);
                         continue;
                     }
 
@@ -187,8 +194,8 @@ namespace __yky.MisoShadowController.Editor
                 strengthClips[0] = AssetDatabase.LoadAssetAtPath<AnimationClip>(ShadowBody);
                 strengthClips[1] = AssetDatabase.LoadAssetAtPath<AnimationClip>(ShadowETC);
 
-                Util.CopyClip(ctx.AvatarRootTransform, nameList, strengthClips[0], clip);
-                Util.CopyClip(ctx.AvatarRootTransform, nameList, strengthClips[1], clip, true);
+                Utils.CopyClip(ctx.AvatarRootTransform, nameList, strengthClips[0], clip);
+                Utils.CopyClip(ctx.AvatarRootTransform, nameList, strengthClips[1], clip, true);
             });
 
             var strength = layer.NewState("Strength").WithAnimation(strengthClip);
@@ -207,7 +214,7 @@ namespace __yky.MisoShadowController.Editor
             {
                 var angleClip = AssetDatabase.LoadAssetAtPath<AnimationClip>(ShadowAngle);
 
-                Util.CopyClip(ctx.AvatarRootTransform, nameList, angleClip, clip, false, true);
+                Utils.CopyClip(ctx.AvatarRootTransform, nameList, angleClip, clip, false, true);
             });
 
             var itemFloat = layer.FloatParameter(ParamShadowAngle);
