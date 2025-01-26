@@ -12,7 +12,7 @@ namespace __yky.MisoShadowNDMF.Editor
         private SerializedProperty _savableShadowStrength;
         private SerializedProperty _savableShadowAngle;
 
-        private static bool showAdvanced;
+        private static bool _showAdvanced;
 
         private void OnEnable()
         {
@@ -42,9 +42,9 @@ namespace __yky.MisoShadowNDMF.Editor
                     EditorGUILayout.PropertyField(_savableShadowStrength, Utils.Label("Savable Shadow Strength"));
                     EditorGUILayout.PropertyField(_savableShadowAngle, Utils.Label("Savable Shadow Angle"));
 
-                    showAdvanced = EditorGUILayout.Foldout(showAdvanced, Utils.Label("Advanced"));
+                    _showAdvanced = EditorGUILayout.Foldout(_showAdvanced, Utils.Label("Advanced"));
 
-                    if (showAdvanced)
+                    if (_showAdvanced)
                         EditorGUILayout.PropertyField(_menuRoot, Utils.Label("Menu Root"));
                 }
             }

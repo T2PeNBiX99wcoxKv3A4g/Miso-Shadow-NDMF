@@ -100,37 +100,37 @@ namespace __yky.MisoShadowNDMF.Editor
             return label;
         }
 
-        private static GUIStyle boldLabel;
+        private static GUIStyle _boldLabel;
 
         // ReSharper disable once MemberCanBePrivate.Global
         public static GUIStyle BoldLabel
         {
             get
             {
-                boldLabel ??= new GUIStyle(EditorStyles.label) { fontStyle = FontStyle.Bold, fontSize = 15 };
-                return boldLabel;
+                _boldLabel ??= new GUIStyle(EditorStyles.label) { fontStyle = FontStyle.Bold, fontSize = 15 };
+                return _boldLabel;
             }
         }
         
-        private static GUIStyle boldLabel2;
+        private static GUIStyle _boldLabel2;
 
         // ReSharper disable once MemberCanBePrivate.Global
         public static GUIStyle BoldLabel2
         {
             get
             {
-                boldLabel2 ??= new GUIStyle(EditorStyles.label) { fontStyle = FontStyle.Bold, fontSize = 12 };
-                return boldLabel2;
+                _boldLabel2 ??= new GUIStyle(EditorStyles.label) { fontStyle = FontStyle.Bold, fontSize = 12 };
+                return _boldLabel2;
             }
         }
 
         private const string Title = "Miso Shadow NDMF";
-        private static GUIContent titleCache;
+        private static GUIContent _titleCache;
 
         public static void ShowTitle()
         {
-            titleCache ??= new GUIContent($"{Title}");
-            EditorGUILayout.LabelField(titleCache, BoldLabel);
+            _titleCache ??= new GUIContent($"{Title}");
+            EditorGUILayout.LabelField(_titleCache, BoldLabel);
         }
     }
 }
