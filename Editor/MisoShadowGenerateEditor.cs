@@ -1,8 +1,7 @@
-using __yky.MisoShadowNDMF.Editor;
 using __yky.MisoShadowNDMF.Runtime;
 using UnityEditor;
 
-namespace __yky.MisoShadowController.Editor
+namespace __yky.MisoShadowNDMF.Editor
 {
     [CustomEditor(typeof(MisoShadowGenerate))]
     public class MisoShadowGenerateEditor : UnityEditor.Editor
