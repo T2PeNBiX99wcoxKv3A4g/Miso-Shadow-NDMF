@@ -1,9 +1,9 @@
-using __yky.MisoShadowController.Runtime;
+using __yky.MisoShadowNDMF.Runtime;
 using UnityEditor;
 using UnityEngine;
 using VRC.SDK3.Avatars.Components;
 
-namespace __yky.MisoShadowController.Editor
+namespace __yky.MisoShadowNDMF.Editor
 {
     public class MisoShadowGeneratorCreate : EditorWindow
     {

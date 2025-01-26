@@ -1,19 +1,19 @@
 using System;
 using System.Linq;
-using __yky.MisoShadowController.Editor;
-using __yky.MisoShadowController.Runtime;
+using __yky.MisoShadowNDMF.Editor;
+using __yky.MisoShadowNDMF.Runtime;
 using AnimatorAsCode.V1;
 using AnimatorAsCode.V1.ModularAvatar;
 using AnimatorAsCode.V1.VRC;
-using nadena.dev.ndmf;
 using Miso.Utility;
+using nadena.dev.ndmf;
 using UnityEditor;
 using UnityEngine;
 using VRC.SDK3.Avatars.Components;
 
 [assembly: ExportsPlugin(typeof(MisoShadowGenerator))]
 
-namespace __yky.MisoShadowController.Editor
+namespace __yky.MisoShadowNDMF.Editor
 {
     public class MisoShadowGenerator : Plugin<MisoShadowGenerator>
     {

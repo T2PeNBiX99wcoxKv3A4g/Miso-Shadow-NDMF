@@ -1,18 +1,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using __yky.MisoShadowController.Runtime;
+using __yky.MisoShadowNDMF.Runtime;
 using AnimatorAsCode.V1;
 using Miso.Utility;
 using UnityEditor;
 using UnityEngine;
 
-namespace __yky.MisoShadowController.Editor
+namespace __yky.MisoShadowNDMF.Editor
 {
     public static class Utils
     {
         private const string ShaderShortName = "lil";
 
+        // ReSharper disable once UnusedMember.Global
         public static List<string> CheckShader(GameObject avatar)
         {
             var renderers = avatar.GetComponentsInChildren<Renderer>(true);

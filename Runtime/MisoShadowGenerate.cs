@@ -2,7 +2,7 @@ using nadena.dev.modular_avatar.core;
 using UnityEngine;
 using VRC.SDK3.Avatars.ScriptableObjects;
 
-namespace __yky.MisoShadowController.Runtime
+namespace __yky.MisoShadowNDMF.Runtime
 {
     [DisallowMultipleComponent]
     [RequireComponent(typeof(ModularAvatarMenuInstaller))]

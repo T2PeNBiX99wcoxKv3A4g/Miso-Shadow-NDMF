@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace __yky.MisoShadowController.Runtime
+namespace __yky.MisoShadowNDMF.Runtime
 {
     [DisallowMultipleComponent]
     [AddComponentMenu("yky/Miso Shadow/Miso Shadow Ignore")]
