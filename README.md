@@ -11,6 +11,6 @@
 [インストーラ](https://github.com/T2PeNBiX99wcoxKv3A4g/Miso-Shadow-NDMF/releases/latest/download/Miso-Shadow-NDMF-installer.unitypackage)
 を使って自動にパッケージがインストールすることはできます
 
-新しいのオプション「Add shadow (NDMF)」が利用できます
+インストール完了後、新しいのオプション「Add shadow (NDMF)」が利用できます
 
 NDMF Version of [Miso Shadow](https://booth.pm/ja/items/5135844)
