@@ -15,5 +15,10 @@
   "label.additional": "Additional Setting",
   "label.additional.tooltip": "Additional setting",
   "label.additional.menu_root": "Menu Root",
-  "label.additional.menu_root.tooltip": "The menu root of installer"
+  "label.additional.menu_root.tooltip": "The menu root of installer",
+  "label.ignore": "This object will be ignore when 'Miso Shadow NDMF' is installing",
+  "menu.shadow_strength": "Shadow Strength",
+  "menu.shadow_angle": "Shadow Angle",
+  "menu.toggle_angle": "Toggle Angle",
+  "menu.reset": "Reset"
 }

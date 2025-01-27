@@ -131,6 +131,7 @@ namespace __yky.MisoShadowNDMF.Editor
         {
             _titleCache ??= new GUIContent($"{Title}");
             EditorGUILayout.LabelField(_titleCache, BoldLabel);
+            EditorGUILayout.Separator();
         }
     }
 }

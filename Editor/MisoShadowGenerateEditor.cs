@@ -26,7 +26,6 @@ namespace __yky.MisoShadowNDMF.Editor
         public override void OnInspectorGUI()
         {
             Utils.ShowTitle();
-            EditorGUILayout.Separator();
             EditorGUILayout.LabelField("label.setting".G(), Utils.BoldLabel2);
             serializedObject.Update();
             EditorGUI.BeginChangeCheck();
@@ -48,10 +47,10 @@ namespace __yky.MisoShadowNDMF.Editor
                 }
             }
 
-            Localization.SelectLanguageGUI();
-
             if (EditorGUI.EndChangeCheck())
                 serializedObject.ApplyModifiedProperties();
+            
+            Localization.SelectLanguageGUI();
         }
     }
 }

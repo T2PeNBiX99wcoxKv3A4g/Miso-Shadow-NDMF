@@ -32,10 +32,10 @@ namespace __yky.MisoShadowNDMF.Editor
         private const string ParamShadowAngle = "MisoShadow/ShadowAngle";
         private const string ParamToggleAngle = "MisoShadow/ToggleAngle";
         private const string ParamReset = "MisoShadow/Reset";
-        private const string MenuShadowStrength = "Shadow Strength";
-        private const string MenuShadowAngle = "Shadow Angle";
-        private const string MenuToggleAngle = "Toggle Angle";
-        private const string MenuReset = "Reset";
+        private const string MenuShadowStrength = "menu.shadow_strength";
+        private const string MenuShadowAngle = "menu.shadow_angle";
+        private const string MenuToggleAngle = "menu.toggle_angle";
+        private const string MenuReset = "menu.reset";
 
         protected override void Configure() => InPhase(BuildPhase.Generating).Run($"Generate {DisplayName}", Generate);
 
@@ -268,36 +268,36 @@ namespace __yky.MisoShadowNDMF.Editor
             modularAvatar.NewMergeAnimator(ctrl.AnimatorController, VRCAvatarDescriptor.AnimLayerType.FX);
 
             var menuRootObj = generate.menuRoot.gameObject;
-            var menuObj = new GameObject(MenuShadowStrength)
+            var menuObj = new GameObject(MenuShadowStrength.L())
             {
                 transform = { parent = menuRootObj.transform }
             };
             var menu = modularAvatar.EditMenuItem(menuObj);
-            menu.Name(MenuShadowStrength);
+            menu.Name(MenuShadowStrength.L());
             menu.Toggle(itemBool);
 
-            var menuObj2 = new GameObject(MenuShadowAngle)
+            var menuObj2 = new GameObject(MenuShadowAngle.L())
             {
                 transform = { parent = menuRootObj.transform }
             };
             var menu2 = modularAvatar.EditMenuItem(menuObj2);
-            menu2.Name(MenuShadowAngle);
+            menu2.Name(MenuShadowAngle.L());
             menu2.Radial(itemFloat);
 
-            var menuObj3 = new GameObject(MenuToggleAngle)
+            var menuObj3 = new GameObject(MenuToggleAngle.L())
             {
                 transform = { parent = menuRootObj.transform }
             };
             var menu3 = modularAvatar.EditMenuItem(menuObj3);
-            menu3.Name(MenuToggleAngle);
+            menu3.Name(MenuToggleAngle.L());
             menu3.Toggle(itemBool2);
 
-            var menuObj4 = new GameObject(MenuReset)
+            var menuObj4 = new GameObject(MenuReset.L())
             {
                 transform = { parent = menuRootObj.transform }
             };
             var menu4 = modularAvatar.EditMenuItem(menuObj4);
-            menu4.Name(MenuReset);
+            menu4.Name(MenuReset.L());
             menu4.Button(itemBool3);
         }
     }

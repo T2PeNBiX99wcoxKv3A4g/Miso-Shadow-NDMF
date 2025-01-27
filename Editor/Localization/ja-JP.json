@@ -15,5 +15,10 @@
   "label.additional": "追加設定",
   "label.additional.tooltip": "追加設定",
   "label.additional.menu_root": "メニュールート",
-  "label.additional.menu_root.tooltip": "インストーラーのメニュールート"
+  "label.additional.menu_root.tooltip": "インストーラーのメニュールート",
+  "label.ignore": "このオブジェクトは、「Miso Shadow NDMF」のインストール時には無視される。",
+  "menu.shadow_strength": "シャドーの強さ",
+  "menu.shadow_angle": "シャドーアングル",
+  "menu.toggle_angle": "トグルアングル",
+  "menu.reset": "リセット"
 }
