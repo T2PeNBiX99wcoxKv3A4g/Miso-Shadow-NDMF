@@ -28,7 +28,7 @@ namespace __yky.MisoShadowNDMF.Editor
         private static readonly Dictionary<string, ImmutableSortedDictionary<string, string>>
             LanguageDictionary = new();
 
-        private static readonly Dictionary<string, Dictionary<string, GUIContent>> GuiContents = new();
+        private static readonly Dictionary<string, GUIContent> GuiContents = new();
 
         private static string SelectedLanguage
         {
@@ -58,15 +58,12 @@ namespace __yky.MisoShadowNDMF.Editor
 
         private static GUIContent G(string key, Texture image, string tooltip)
         {
-            if (GuiContents.TryGetValue(SelectedLanguage, out var contents))
-            {
-                if (contents.TryGetValue(key, out var content))
-                    return content;
-            }
-
-            if (!GuiContents.ContainsKey(SelectedLanguage))
-                GuiContents[SelectedLanguage] = new Dictionary<string, GUIContent>();
-            return GuiContents[SelectedLanguage][key] = new GUIContent(L(key), image, L(tooltip));
+            if (!GuiContents.TryGetValue(key, out var content))
+                return GuiContents[key] = new GUIContent(L(key), image, L(tooltip));
+            content.text = L(key);
+            content.image = image;
+            content.tooltip = L(tooltip);
+            return content;
         }
 
         internal static void SelectLanguageGUI()
