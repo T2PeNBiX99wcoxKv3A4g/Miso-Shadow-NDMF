@@ -5,7 +5,7 @@ using VRC.SDK3.Avatars.Components;
 
 namespace __yky.MisoShadowNDMF.Editor
 {
-    public class MisoShadowGeneratorCreate : EditorWindow
+    internal class MisoShadowGeneratorCreate : EditorWindow
     {
         private const string MenuPath = "GameObject/Miso Shadow/Add Shadow (NDMF)";
         private const string MenuPath2 = "GameObject/Miso Shadow/Add Ignore (NDMF)";

@@ -15,7 +15,7 @@ using VRC.SDK3.Avatars.Components;
 
 namespace __yky.MisoShadowNDMF.Editor
 {
-    public class MisoShadowGenerator : Plugin<MisoShadowGenerator>
+    internal class MisoShadowGenerator : Plugin<MisoShadowGenerator>
     {
         public override string QualifiedName => "io.github.yky.animator-as-code.miso-shadow";
         public override string DisplayName => "Miso Shadow";

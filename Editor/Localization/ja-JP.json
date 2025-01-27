@@ -1,0 +1,19 @@
+{
+  "display_name": "日本語",
+  "label.language": "言語",
+  "label.language.tooltip": "エディターでターゲット言語を変更します。",
+  "label.setting": "設定",
+  "label.setting.tooltip": "設定",
+  "label.setting.enable_by_default": "デフォルトで有効にする",
+  "label.setting.enable_by_default.tooltip": "デフォルトでシャドウがオンになる",
+  "label.setting.use_write_defaults": "「Write Defaults」を使用する",
+  "label.setting.use_write_defaults.tooltip": "アニメーションのコントローラーで「Write Defaults」を使用する",
+  "label.setting.savable_shadow_strength": "保存可能なシャドーの強さ",
+  "label.setting.savable_shadow_strength.tooltip": "シャドーの強さのパラメータはデフォルトで保存される",
+  "label.setting.savable_shadow_angle": "保存可能なシャドーアングル",
+  "label.setting.savable_shadow_angle.tooltip": "シャドーアングルのパラメータはデフォルトで保存される",
+  "label.additional": "追加設定",
+  "label.additional.tooltip": "追加設定",
+  "label.additional.menu_root": "メニュールート",
+  "label.additional.menu_root.tooltip": "インストーラーのメニュールート"
+}

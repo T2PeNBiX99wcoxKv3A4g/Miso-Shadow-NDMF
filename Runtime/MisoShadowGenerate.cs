@@ -10,11 +10,11 @@ namespace __yky.MisoShadowNDMF.Runtime
     [AddComponentMenu("yky/Miso Shadow/Miso Shadow Generate")]
     public class MisoShadowGenerate : MisoShadowEditorComponent
     {
-        public ModularAvatarMenuItem menuRoot;
         public bool enableByDefault;
         public bool useWriteDefaults = true;
         public bool savableShadowStrength = true;
         public bool savableShadowAngle;
+        public ModularAvatarMenuItem menuRoot;
         
         private const string MenuRootName = "Miso Shadow";
         private void OnValidate()

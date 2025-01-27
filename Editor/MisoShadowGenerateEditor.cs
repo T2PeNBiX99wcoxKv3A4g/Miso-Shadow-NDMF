@@ -4,7 +4,7 @@ using UnityEditor;
 namespace __yky.MisoShadowNDMF.Editor
 {
     [CustomEditor(typeof(MisoShadowGenerate))]
-    public class MisoShadowGenerateEditor : UnityEditor.Editor
+    internal class MisoShadowGenerateEditor : UnityEditor.Editor
     {
         private SerializedProperty _menuRoot;
         private SerializedProperty _enableByDefault;
@@ -12,7 +12,7 @@ namespace __yky.MisoShadowNDMF.Editor
         private SerializedProperty _savableShadowStrength;
         private SerializedProperty _savableShadowAngle;
 
-        private static bool _showAdvanced;
+        private static bool _showAdditional;
 
         private void OnEnable()
         {
@@ -27,9 +27,7 @@ namespace __yky.MisoShadowNDMF.Editor
         {
             Utils.ShowTitle();
             EditorGUILayout.Separator();
-
-            EditorGUILayout.LabelField(Utils.Label("Options"), Utils.BoldLabel2);
-
+            EditorGUILayout.LabelField("label.setting".G(), Utils.BoldLabel2);
             serializedObject.Update();
             EditorGUI.BeginChangeCheck();
 
@@ -37,17 +35,20 @@ namespace __yky.MisoShadowNDMF.Editor
             {
                 using (new EditorGUILayout.VerticalScope())
                 {
-                    EditorGUILayout.PropertyField(_enableByDefault, Utils.Label("Enable by Default"));
-                    EditorGUILayout.PropertyField(_useWriteDefaults, Utils.Label("Use Write Defaults"));
-                    EditorGUILayout.PropertyField(_savableShadowStrength, Utils.Label("Savable Shadow Strength"));
-                    EditorGUILayout.PropertyField(_savableShadowAngle, Utils.Label("Savable Shadow Angle"));
+                    // Utils.Label("Enable by Default")
+                    EditorGUILayout.PropertyField(_enableByDefault, "label.setting.enable_by_default".G());
+                    EditorGUILayout.PropertyField(_useWriteDefaults, "label.setting.use_write_defaults".G());
+                    EditorGUILayout.PropertyField(_savableShadowStrength, "label.setting.savable_shadow_strength".G());
+                    EditorGUILayout.PropertyField(_savableShadowAngle, "label.setting.savable_shadow_angle".G());
 
-                    _showAdvanced = EditorGUILayout.Foldout(_showAdvanced, Utils.Label("Advanced"));
+                    _showAdditional = EditorGUILayout.Foldout(_showAdditional, "label.additional".G());
 
-                    if (_showAdvanced)
-                        EditorGUILayout.PropertyField(_menuRoot, Utils.Label("Menu Root"));
+                    if (_showAdditional)
+                        EditorGUILayout.PropertyField(_menuRoot, "label.additional.menu_root".G());
                 }
             }
+
+            Localization.SelectLanguageGUI();
 
             if (EditorGUI.EndChangeCheck())
                 serializedObject.ApplyModifiedProperties();
