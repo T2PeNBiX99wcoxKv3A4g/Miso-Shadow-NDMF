@@ -17,8 +17,8 @@ namespace __yky.MisoShadowNDMF.Editor
 {
     internal class MisoShadowGenerator : Plugin<MisoShadowGenerator>
     {
-        public override string QualifiedName => "io.github.yky.animator-as-code.miso-shadow";
-        public override string DisplayName => "Miso Shadow";
+        public override string QualifiedName => "io.github.yky.animator-as-code.miso-shadow-ndmf";
+        public override string DisplayName => "Miso Shadow NDMF";
 
         private const string SystemName = "MisoShadow";
         private const string LayerName = "MisoShadow/ShadowStrength";
