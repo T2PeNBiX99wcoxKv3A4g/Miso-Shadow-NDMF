@@ -12,7 +12,7 @@ namespace __yky.MisoShadowNDMF.Editor
         private SerializedProperty _savableShadowStrength;
         private SerializedProperty _savableShadowAngle;
 
-        private static bool _showAdditional;
+        private static bool _showDevs;
 
         private void OnEnable()
         {
@@ -34,16 +34,15 @@ namespace __yky.MisoShadowNDMF.Editor
             {
                 using (new EditorGUILayout.VerticalScope())
                 {
-                    // Utils.Label("Enable by Default")
                     EditorGUILayout.PropertyField(_enableByDefault, "label.setting.enable_by_default".G());
                     EditorGUILayout.PropertyField(_useWriteDefaults, "label.setting.use_write_defaults".G());
                     EditorGUILayout.PropertyField(_savableShadowStrength, "label.setting.savable_shadow_strength".G());
                     EditorGUILayout.PropertyField(_savableShadowAngle, "label.setting.savable_shadow_angle".G());
 
-                    _showAdditional = EditorGUILayout.Foldout(_showAdditional, "label.additional".G());
+                    _showDevs = EditorGUILayout.Foldout(_showDevs, "label.dev".G());
 
-                    if (_showAdditional)
-                        EditorGUILayout.PropertyField(_menuRoot, "label.additional.menu_root".G());
+                    if (_showDevs)
+                        EditorGUILayout.PropertyField(_menuRoot, "label.dev.menu_root".G());
                 }
             }
 

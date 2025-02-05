@@ -82,8 +82,6 @@ namespace __yky.MisoShadowNDMF.Editor
             var langDisplayNames = new Dictionary<string, string>();
             var langKeyList = new List<string>();
 
-            Debug.Log("Loading Test");
-
             foreach (var filePath in filePaths.Where(f => f.EndsWith(Ext)))
             {
                 var lang = Path.GetFileNameWithoutExtension(filePath);
@@ -94,7 +92,6 @@ namespace __yky.MisoShadowNDMF.Editor
 
                 langDisplayNames.Add(lang, langauge[DisplayNameKey] ?? Null);
                 langKeyList.Add(lang);
-                Debug.Log($"Loading Localization file: {filePath} {lang}");
             }
 
             var languageDisplayNames = langDisplayNames.ToImmutableSortedDictionary()
