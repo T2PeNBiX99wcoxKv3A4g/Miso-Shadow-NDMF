@@ -9,7 +9,7 @@ namespace __yky.MisoShadowNDMF.Editor
         public override void OnInspectorGUI()
         {
             Utils.ShowTitle();
-            EditorGUILayout.LabelField("label.ignore".G(), Utils.BoldLabel2);
+            EditorGUILayout.HelpBox("label.ignore".L(), MessageType.Info, true);
             EditorGUILayout.Separator();
             Localization.SelectLanguageGUI();
         }
